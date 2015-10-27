@@ -4,7 +4,13 @@
     require_once('render.php');
     renderMeta();
     renderHeader();
-    renderIdentification();
+
+    debutForm();
+    createQuizz($bdd);
+    session_start();
+
+    finForm();
+
     renderFooter();
 ?>
 

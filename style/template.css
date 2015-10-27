@@ -1,0 +1,58 @@
+html, body
+{
+    height: 100%;
+}
+
+body{
+    margin:0;
+    padding:0;
+    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+
+}
+
+#wrapper{
+    background : rgba(0, 0, 0, 0) url("../img/header-bg-rapetisse.png") repeat-x scroll 0 0;
+    height: auto !important;
+    margin: 0 auto -119px;
+    min-height : 100%;
+}
+
+#banner{
+    background: rgba(0, 0, 0, 0) url("../img/logo_halo_avec_fond_masque_rapetisse.png") no-repeat scroll left top;
+    height: 123px;
+    margin: auto;
+    width : 1200px;
+
+}
+
+#logo{
+    display: inline-block;
+    height: 109px;
+    margin-left: 60px;
+    padding-top: 15px;
+    vertical-align: top;
+    width: 12%;
+}
+
+#logo a{
+    background : rgba(0, 0, 0, 0) url("../img/logo_SOLUTEC.png") no-repeat scroll left top;
+    display:inline-block;
+    height: 87px;
+    position:relative;
+    width: 176px;
+    z-index: 91;
+}
+
+#footer{
+    clear:both;
+    height: 119px;
+}
+
+#footer-bottom {
+    background: rgba(0, 0, 0, 0) url("../img/footer-bg-rapetisse.png") repeat-x scroll center bottom;
+    border-top: 4px solid #ea142b;
+    height: 92px;
+    min-width: 1200px;
+    width: 100%;
+}
+
