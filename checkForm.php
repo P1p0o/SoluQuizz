@@ -1,6 +1,7 @@
 <?php
-var_dump($_POST);
 require_once('config.php');
+require_once('functions.php');
+require_once('render.php');
 $score = 0;
 $bonnes_reponses = array();
 $mauvaises_reponses = array();
@@ -37,12 +38,19 @@ foreach($_POST as $key => $value){
 }
 
 session_start();
+$bonnes_reponses_string = implode(",", $bonnes_reponses);
+$mauvaises_reponses_string = implode(",", $mauvaises_reponses);
+$oublies_reponses_string = implode(",", $oublies_reponses);
 
-echo 'SCORE : ' . $score;
+$sql = "UPDATE utilisateurs SET bonnesReponses='".$bonnes_reponses_string."' , mauvaisesReponses='".$mauvaises_reponses_string."' , oubliesReponses='".$oublies_reponses_string."' , fait=1 WHERE identifiant='".$_SESSION['user']."'";
+$count = $bdd->exec($sql);
 
-var_dump($bonnes_reponses);
-var_dump($mauvaises_reponses);
-var_dump($oublies_reponses);
 
+// permettre à l'utilisateur de visualiser les bonnes et mauvaises réponses ainsi que son score général.
+renderMeta();
+renderHeader();
+echo '<div id="resultats">SCORE : ' . $score;
+createAnswers($bdd, $bonnes_reponses, $mauvaises_reponses, $oublies_reponses);
+renderFooter();
 
 ?>

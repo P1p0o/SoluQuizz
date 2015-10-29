@@ -1,13 +1,14 @@
 <?php
 
 function renderMeta(){
-        echo'<!DOCTYPE html>
+        echo '<!DOCTYPE html>
         <html lang="en">
         <head>
             <meta charset="UTF-8">
             <title></title>
             <link rel="stylesheet" href="style/template.css">
             <link rel="stylesheet" href="style/identification.css">
+            <link rel="stylesheet" href="style/wrongId.css">
         </head>
         <body>';
 }
