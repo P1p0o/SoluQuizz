@@ -28,6 +28,24 @@ function renderAdminHeader(){
             <div id="logo">
                 <a href="http://www.solutec.fr/fr/"></a>
             </div>
+            <div id="banner_content">
+                <div id="menu">
+                    <nav>
+                        <ul class="menu">
+                        <li>
+                        <a href="newUser.php">
+                            Ajouter un candidat
+                        </a>
+                        </li>
+                        <li>
+                        <a href="resultats.php">
+                            Résultats des candidats
+                        </a>
+                        </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>';
 }
 
