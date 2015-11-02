@@ -22,6 +22,15 @@ function renderHeader(){
         </div>';
 }
 
+function renderAdminHeader(){
+    echo'<div id="wrapper">
+        <div id="banner">
+            <div id="logo">
+                <a href="http://www.solutec.fr/fr/"></a>
+            </div>
+        </div>';
+}
+
 function renderFooter(){
         echo'</div>
         <div id="footer">

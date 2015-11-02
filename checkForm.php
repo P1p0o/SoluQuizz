@@ -23,18 +23,15 @@ foreach($_POST as $key => $value){
         }
     }
 
-    $sql =  "SELECT * FROM questionsbonnereponse WHERE idQuestion =".$key." ORDER BY RAND()";
-    foreach  ($bdd->query($sql) as $row)
-    {
-        $check = false;
-        foreach($value as $answer){
-            if($row['idReponse'] == $answer) $check = true;
-        }
-        if($check == false){
-            array_push($oublies_reponses, $row['idReponse']);
-            //$score -= 0.5;
-        }
-    }
+}
+
+
+$sql =  "SELECT * FROM questionsbonnereponse ORDER BY RAND()";
+
+foreach  ($bdd->query($sql) as $row)
+{
+    if(!in_array($row['idReponse'], $bonnes_reponses    ))
+    array_push($oublies_reponses, $row['idReponse']);
 }
 
 session_start();
@@ -52,5 +49,7 @@ renderHeader();
 echo '<div id="resultats">SCORE : ' . $score;
 createAnswers($bdd, $bonnes_reponses, $mauvaises_reponses, $oublies_reponses);
 renderFooter();
+
+session_destroy();
 
 ?>
